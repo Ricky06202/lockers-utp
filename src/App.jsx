@@ -1,43 +1,50 @@
-import Boton from "./components/Boton";
+import BarraDeNavegacion from './components/BarraDeNavegacion'
+import CartaInformativa from './components/CartaInformativa'
+import ImagenLocker from './components/ImagenLocker'
+import MapaDeLosLockers from './components/MapaDeLosLockers'
+import Seccion from './components/Seccion'
+import { LOCKERS, ZONAS } from './constants/lockers'
 
 export default function App() {
+	let tituloMapaUbicaciones = (
+		<>
+			Ubicaciones de
+			<br />
+			los Lockers
+		</>
+	)
 	return (
 		<>
-			<nav className='bg-blue-700 p-7 flex flex-col items-center gap-5'>
-				<h1 className='text-5xl text-white text-center'>Sistema de Lockers UTP</h1>
-				<div className='grid gap-5 w-full'>
-					<button className='btn text-xl'>Iniciar Sesion</button>
-					<Boton>Cerrar Sesion</Boton>
-				</div>
-			</nav>
-			<section className=' flex flex-col items-center'>
-				<h2 className='text-4xl text-center p-5'>
-					Ubicaciones de
-					<br />
-					los Lockers
-				</h2>
-				<img
-					src='https://previews.123rf.com/images/tatiana53/tatiana531406/tatiana53140600897/29571455-mapa-de-veraguas-panam%C3%A1-3d.jpg'
-					alt=''
-				/>
-			</section>
-			<section className='flex flex-col items-center'>
-				<h2 className='text-4xl text-center p-5'>Zonas de Lockers</h2>
-				<div className='w-5/6'>
-					<div className='card bg-blue-600 p-1 flex-row'>
-						<img
-							className='w-32 rounded-l-xl'
-							src='https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgByBT5IiAT_a2x9pUVb4VMoOrlzHH7Jrzj-HB5jzHlR4lNLMS'
-							alt=''
-						/>
-						<div className='flex flex-col w-full items-center justify-center bg-blue-500 rounded-e-xl'>
-							<h3 className="text-2xl">Cafeteria</h3>
-              <span>Lockers Disponibles</span>
-              <span>5/15</span>
-						</div>
-					</div>
-				</div>
-			</section>
+			<BarraDeNavegacion />
+			<Seccion
+				titulo={tituloMapaUbicaciones}
+				className=' flex flex-col items-center'
+			>
+				<MapaDeLosLockers />
+			</Seccion>
+			<Seccion titulo={'Zonas de Lockers'}>
+				{ZONAS.map((zona) => (
+					<CartaInformativa
+						key={zona.nombre}
+						imagen={<ImagenLocker />}
+						titulo={zona.nombre}
+					>
+						<span>Lockers Disponibles</span>
+						<span>{zona.lockersDisponibles + '/' + zona.lockersTotales}</span>
+					</CartaInformativa>
+				))}
+			</Seccion>
+			<Seccion titulo={'Lista de Lockers'}>
+				{LOCKERS.map((locker) => (
+					<CartaInformativa key={locker.nombre}
+						imagen={<ImagenLocker />}
+						titulo={locker.nombre}
+					>
+						<span>{locker.zona}</span>
+						<span>{locker.estaDisponible ? "Disponible" : "Ocupado"}</span>
+					</CartaInformativa>
+				))}
+			</Seccion>
 		</>
 	)
 }
