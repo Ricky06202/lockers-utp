@@ -1,11 +1,11 @@
-import BarraDeNavegacion from '/src/components/BarraDeNavegacion'
-import CartaInformativa from '/src/components/CartaInformativa'
-import ImagenLocker from '/src/components/ImagenLocker'
-import MapaDeLosLockers from '/src/components/MapaDeLosLockers'
-import Seccion from '/src/components/Seccion'
-import { LOCKERS, ZONAS } from '/src/constants/lockers'
+import BarraDeNavegacion from '../components/BarraDeNavegacion'
+import CartaInformativa from '../components/CartaInformativa'
+import ImagenLocker from '../components/ImagenLocker'
+import MapaDeLosLockers from '../components/MapaDeLosLockers'
+import Seccion from '../components/Seccion'
+import { LOCKERS, ZONAS } from '../constants/Lockers'
 
-export default function Route(){
+export default function Home(){
     let tituloMapaUbicaciones = (
 		<>
 			Ubicaciones de

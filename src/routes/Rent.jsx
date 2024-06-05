@@ -1,6 +1,6 @@
-export default function Route(){
+export default function Rent(){
     return (
-        <h2 style={{fontSize: 44}}>
+        <h2 className="text-5xl">
             rent
         </h2>
     )
