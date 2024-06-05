@@ -3,6 +3,7 @@ import Boton from '../components/Boton'
 import Campo from '../components/Campo'
 import Enlace from '../components/Enlace'
 import Seccion from '../components/Seccion'
+import { URL } from '../constants/direccionesWeb'
 
 export default function Login() {
 	return (
@@ -14,7 +15,7 @@ export default function Login() {
 			<Seccion className='mt-4 text-2xl' gap="gap-4">
 				<Campo placeholder="Introducir Usuario"/>
 				<Campo placeholder="Introducir Contraseña" type="password"/>
-				<Enlace destino="/register">
+				<Enlace destino={URL.REGISTER}>
 					<a className='mt-4 text-xl text-yellow-500'>¿Olvidaste la contraseña?</a>
 				</Enlace>
 				<Boton className="w-full text-2xl">Iniciar sesión</Boton>
