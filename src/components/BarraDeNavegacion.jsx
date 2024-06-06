@@ -12,7 +12,7 @@ export default function BarraDeNavegacion({ ocultarBotones, subtitulo }) {
 			{ocultarBotones ? (
 				<h2 className='text-5xl text-center '>{subtitulo}</h2>
 			) : (
-				<div className='flex justify-end w-full gap-5' >
+				<div className='flex justify-center w-full gap-5' >
 					<Enlace destino={URL.LOGIN}>
 						<Boton>
 							<h2>LOGIN</h2>

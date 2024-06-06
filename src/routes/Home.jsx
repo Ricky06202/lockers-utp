@@ -22,7 +22,7 @@ export default function Home(){
 			>
 				<MapaDeLosLockers />
 			</Seccion>
-			<Seccion titulo={'Zonas de Lockers'}>
+			<Seccion titulo={'Ubicación de los Lockers'}>
 				{ZONAS.map((zona) => (
 					<CartaInformativa
 						key={zona.nombre}

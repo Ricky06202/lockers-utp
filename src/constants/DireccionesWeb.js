@@ -3,4 +3,5 @@ export const URL = {
 	LOGIN: '/login',
 	REGISTER: '/register',
 	RENT: '/rent',
+	INFORMATION: '/information',
 }
