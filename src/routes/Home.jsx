@@ -3,7 +3,7 @@ import CartaInformativa from '../components/CartaInformativa'
 import ImagenLocker from '../components/ImagenLocker'
 import MapaDeLosLockers from '../components/MapaDeLosLockers'
 import Seccion from '../components/Seccion'
-import { LOCKERS, ZONAS } from '../constants/lockers'
+import { LOCKERS, ZONAS } from '../constants/Lockers'
 
 export default function Home(){
     let tituloMapaUbicaciones = (
