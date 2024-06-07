@@ -11,14 +11,17 @@ export default function Rent(){
 				ocultarBotones
 				subtitulo='Alquiler'
 			/>
+            <nav className="m-8 bg-indigo-800">
             <Seccion>
             <form className='flex flex-col gap-5'>
                 <Campo placeholder="Locker" disabled/>
                 <Campo placeholder="Duración (en días)" type="number"/>
                 <CampoSeleccion titulo="Método de Pago" opciones={["Yapi", "PayPal", "Visa"]}/>
-                <Boton type="Submit">Alquilar</Boton>
+                <Boton className="mb-6" type="Submit">Alquilar</Boton>
             </form>
             </Seccion>
+            </nav>
+            
 
 		</>
     )

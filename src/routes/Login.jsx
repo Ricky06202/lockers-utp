@@ -12,7 +12,7 @@ export default function Login() {
 				ocultarBotones
 				subtitulo='Inicio de Sesión'
 			/>
-			<nav className='flex items-start flex-raw'>
+			<nav className='flex items-start m-8 bg-indigo-800 flex-raw'>
 			<Seccion className='py-4 mt-4 text-2xl' gap="gap-4">
 				<a className='mb-6 text-5xl text-slate-100'>Iniciar Sesión</a>
 				<Campo placeholder="Introducir Usuario"/>
