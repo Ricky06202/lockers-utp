@@ -12,9 +12,8 @@ export default function Login() {
 				ocultarBotones
 				subtitulo='Inicio de Sesión'
 			/>
-			<nav className='flex items-start m-8 bg-indigo-800 flex-raw'>
-			<Seccion className='py-4 mt-4 text-2xl' gap="gap-4">
-				<a className='mb-6 text-5xl text-slate-100'>Iniciar Sesión</a>
+			<div className='flex flex-col items-center justify-center'>
+			<Seccion className='py-4 text-2xl' gap="gap-4" color='bg-indigo-800 p-6 rounded-xl'>
 				<Campo placeholder="Introducir Usuario"/>
 				<Campo placeholder="Introducir Contraseña" type="password"/>
 				<Enlace destino={URL.REGISTER}>
@@ -25,7 +24,7 @@ export default function Login() {
 					<a className='mt-4 text-xl text-yellow-500'>¿No tienes una cuenta? Registrarse</a>
 				</Enlace>
 			</Seccion>
-			</nav>
+			</div>
 		</>
 	)
 }

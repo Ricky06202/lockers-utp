@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
 
-export default function Enlace({ children, destino }) {
-	return <Link to={destino}>{children}</Link>
+export default function Enlace({ children, destino, className }) {
+	return <Link to={destino} className={className}>{children}</Link>
 }

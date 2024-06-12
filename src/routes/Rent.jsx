@@ -11,7 +11,7 @@ export default function Rent(){
 				ocultarBotones
 				subtitulo='Alquiler'
 			/>
-            <nav className="m-8 bg-indigo-800">
+            <nav className="m-8 bg-indigo-800" >
             <Seccion>
             <form className='flex flex-col gap-5'>
                 <Campo placeholder="Locker 1" disabled/>

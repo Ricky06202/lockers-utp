@@ -22,26 +22,28 @@ export default function Home(){
 			>
 				<MapaDeLosLockers />
 			</Seccion>
-			<Seccion titulo={'Ubicación de los Lockers'}>
+			<Seccion titulo={'Ubicación de los Lockers'} responsive>
 				{ZONAS.map((zona) => (
 					<CartaInformativa
 						key={zona.nombre}
 						imagen={<ImagenLocker />}
 						titulo={zona.nombre}
+						responsive
 					>
-						<span>Lockers Disponibles</span>
-						<span>{zona.lockersDisponibles + '/' + zona.lockersTotales}</span>
+						<div className='text-center'>Lockers Disponibles</div>
+						<div className='text-center'>{zona.lockersDisponibles + '/' + zona.lockersTotales}</div>
 					</CartaInformativa>
 				))}
 			</Seccion>
-			<Seccion titulo={'Lista de Lockers'}>
+			<Seccion titulo={'Lista de Lockers'} responsive>
 				{LOCKERS.map((locker) => (
 					<CartaInformativa key={locker.nombre}
 						imagen={<ImagenLocker />}
 						titulo={locker.nombre}
+						responsive
 					>
-						<span>{locker.zona}</span>
-						<span>{locker.estaDisponible ? "Disponible" : "Ocupado"}</span>
+						<div className='text-center'>{locker.zona}</div>
+						<div className='text-center'>{locker.estaDisponible ? "Disponible" : "Ocupado"}</div>
 					</CartaInformativa>
 				))}
 			</Seccion>
