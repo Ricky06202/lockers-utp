@@ -12,7 +12,7 @@ export default function Login() {
 				ocultarBotones
 				subtitulo='Inicio de Sesión'
 			/>
-			<div className='flex flex-col items-center justify-center'>
+			<div className='flex flex-col items-center justify-center'> 
 			<Seccion className='py-4 text-2xl' gap="gap-4" color='bg-indigo-800 p-6 rounded-xl'>
 				<Campo placeholder="Introducir Usuario"/>
 				<Campo placeholder="Introducir Contraseña" type="password"/>

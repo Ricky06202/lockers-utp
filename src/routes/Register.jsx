@@ -9,11 +9,10 @@ export default function Register(){
         <>
 			<BarraDeNavegacion
 				ocultarBotones
-				subtitulo='Registro'
+				subtitulo='Registrarse'
 			/>
             <nav className='m-8 bg-indigo-800'>
-            <Seccion className='mt-4 text-2xl' gap="gap-4">
-				<a className='mb-6 text-5xl text-slate-100'>Registrarse</a>
+            <Seccion  className='text-2xl ' gap="gap-4" color='bg-indigo-800 p-2 rounded-xl'>
 				<Campo placeholder="Nombre Completo"/>
 				<Campo placeholder="Nombre de Usuario"/>
                 <CampoSeleccion titulo="Sexo..." opciones={["Hombre", "Mujer"]}/>
