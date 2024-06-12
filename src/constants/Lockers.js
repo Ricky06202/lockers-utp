@@ -3,16 +3,19 @@ export const ZONAS = [
 		nombre: "Cafeteria",
 		lockersTotales: 16,
 		lockersDisponibles: 5,
+		imagen: "public/LockersCafetería.png",
 	},
 	{
 		nombre: "Cafetin",
 		lockersTotales: 10,
 		lockersDisponibles: 9,
+		imagen: "public/LockersCafetín.png",
 	},
 	{
 		nombre: "Industrial",
 		lockersTotales: 12,
 		lockersDisponibles: 7,
+		imagen: "public/LockersIndustrial.png",
 	},
 ]
 
@@ -68,3 +71,4 @@ export const LOCKERS = [
 		estaDisponible: true,
 	},
 ]
+

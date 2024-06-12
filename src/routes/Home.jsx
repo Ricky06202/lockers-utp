@@ -26,7 +26,7 @@ export default function Home(){
 				{ZONAS.map((zona) => (
 					<CartaInformativa
 						key={zona.nombre}
-						imagen={<ImagenLocker />}
+						imagen={<ImagenLocker/>}
 						titulo={zona.nombre}
 						responsive
 					>
