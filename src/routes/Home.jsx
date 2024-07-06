@@ -26,7 +26,7 @@ export default function Home(){
 				{ZONAS.map((zona) => (
 					<CartaInformativa
 						key={zona.nombre}
-						imagen={<ImagenLocker src={zona.imagen}/>}
+						imagen={<ImagenLocker imagen={"public/Locker.png"}/>}
 						titulo={zona.nombre}
 						responsive
 					>
@@ -38,7 +38,7 @@ export default function Home(){
 			<Seccion titulo={'Lista de Lockers'} responsive>
 				{LOCKERS.map((locker) => (
 					<CartaInformativa key={locker.nombre}
-						imagen={<ImagenLocker />}
+						imagen={<ImagenLocker imagen={"public/Locker.png"}/>}
 						titulo={locker.nombre}
 						responsive
 					>
