@@ -1,12 +1,20 @@
+import { useState } from 'react'
 import BarraDeNavegacion from '../components/BarraDeNavegacion'
 import CartaInformativa from '../components/CartaInformativa'
 import ImagenLocker from '../components/ImagenLocker'
 import MapaDeLosLockers from '../components/MapaDeLosLockers'
 import Seccion from '../components/Seccion'
-import { LOCKERS, ZONAS } from '../constants/Lockers'
+import { ZONAS } from '../constants/Lockers'
+import { UseLockers } from '../hooks/UseLockers'
+import Lockers from '../components/Lockers'
 
-export default function Home(){
-    let tituloMapaUbicaciones = (
+export default function Home() {
+	const [filtro, updateFiltro] = useState('')
+	const {lockers, getLockers, loading: lockersLoading} = UseLockers({filtro})
+
+	getLockers(filtro)
+
+	let tituloMapaUbicaciones = (
 		<>
 			Ubicaciones de
 			<br />
@@ -22,11 +30,14 @@ export default function Home(){
 			>
 				<MapaDeLosLockers />
 			</Seccion>
-			<Seccion titulo={'Ubicación de los Lockers'} responsive>
+			<Seccion
+				titulo={'Ubicación de los Lockers'}
+				responsive
+			>
 				{ZONAS.map((zona) => (
 					<CartaInformativa
 						key={zona.nombre}
-						imagen={<ImagenLocker src={zona.imagen}/>}
+						imagen={<ImagenLocker src={zona.imagen} />}
 						titulo={zona.nombre}
 						responsive
 					>
@@ -35,17 +46,13 @@ export default function Home(){
 					</CartaInformativa>
 				))}
 			</Seccion>
-			<Seccion titulo={'Lista de Lockers'} responsive>
-				{LOCKERS.map((locker) => (
-					<CartaInformativa key={locker.nombre}
-						imagen={<ImagenLocker />}
-						titulo={locker.nombre}
-						responsive
-					>
-						<div className='text-center'>{locker.zona}</div>
-						<div className='text-center'>{locker.estaDisponible ? "Disponible" : "Ocupado"}</div>
-					</CartaInformativa>
-				))}
+			<Seccion
+				titulo={'Lista de Lockers'}
+				responsive
+			>
+				{lockersLoading
+					? <p>Cargando...</p>
+					: <Lockers lockers={lockers}/>}
 			</Seccion>
 		</>
 	)

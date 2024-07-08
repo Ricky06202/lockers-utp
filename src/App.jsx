@@ -17,7 +17,7 @@ const router = createHashRouter([
     element: <Login />
   },
   {
-    path: URL.RENT,
+    path: URL.RENT + "/:id",
     element: <Rent />
   },
   {
@@ -25,7 +25,7 @@ const router = createHashRouter([
     element: <Register />
   },
   {
-    path: URL.INFORMATION,
+    path: URL.INFORMATION + "/:id",
     element: <Information />
   }
 ]);

@@ -1,4 +1,4 @@
-export default function Campo({placeholder, type, id, name, disabled}) {
+export default function Campo({placeholder, type, id, name, disabled, value, onChange}) {
 	return (
 		<input
 			className='w-full p-1 mt-1 border-2 form-input text-1xl rounded-xl'
@@ -7,6 +7,8 @@ export default function Campo({placeholder, type, id, name, disabled}) {
 			id={id}
 			name={name}
 			disabled={disabled}
+			value={value}
+			onChange={onChange}
 		>
 		</input>
 	)

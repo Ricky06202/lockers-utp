@@ -2,8 +2,26 @@ import { URL } from '../constants/DireccionesWeb'
 import ImagenLogin from '../components/ImagenLogin'
 import Boton from './Boton'
 import Enlace from './Enlace'
+import { obtenerDatosUsuario } from '../services/usuario'
+import { useEffect, useState } from 'react'
 
 export default function BarraDeNavegacion({ ocultarBotones, subtitulo }) {
+	const idSesion = localStorage.getItem('idSesion')
+	const [usuario, setUsuario] = useState(null)
+
+	useEffect(() => {
+		obtenerDatosUsuario(idSesion)
+		.then((usuarioObtenido) => {
+			setUsuario(usuarioObtenido)
+		})
+		.catch((error) => {
+			console.log(error.message)
+		})
+	console.log(usuario)
+	}, [])
+
+	
+
 	return (
 		<>
 			<nav className='flex flex-col items-center justify-center gap-5 text-white bg-blue-700 md:flex-row p-7'>
@@ -22,7 +40,7 @@ export default function BarraDeNavegacion({ ocultarBotones, subtitulo }) {
 							className='w-full'
 						>
 							<Boton>
-								<h2>LOGIN</h2>
+								<h2>{usuario ? usuario.nombre : 'LOGIN'}</h2>
 								<ImagenLogin />
 							</Boton>
 						</Enlace>
